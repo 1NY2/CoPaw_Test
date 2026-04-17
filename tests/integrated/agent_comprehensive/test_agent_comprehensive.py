@@ -84,12 +84,10 @@ class TestSkillsDiscovery:
         Related Code:
             copaw.agents.skills_manager._collect_skills_from_dir()
         """
-        from copaw.agents.skills_manager import (
-            get_active_skills_dir,
-            _collect_skills_from_dir,
-        )
+        from copaw.agents.skills_manager import _collect_skills_from_dir
         
-        active_skills = get_active_skills_dir()
+        # Use the patched active_skills directory from the fixture
+        active_skills = comprehensive_working_dir / "active_skills"
         
         # Verify active_skills directory exists
         assert active_skills.exists()
